@@ -24,7 +24,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
        // GameManager.Instance.updateGameGoal(1);
     }
-
+    //
     // Update is called once per frame
     void Update()
     {
