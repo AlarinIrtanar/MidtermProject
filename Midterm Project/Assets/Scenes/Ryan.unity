@@ -686,6 +686,13 @@ MonoBehaviour:
   jumpForce: 15
   maxJumps: 2
   gravity: 35
+  shootDamage: 5
+  shootRate: 0.1
+  shootDist: 100
+  dashSpeed: 30
+  dashDuration: 0.5
+  dashCooldown: 2.5
+  spawnObjTemp: {fileID: 2569312439671438259, guid: ed9e660ca0682c54fa0c2b6c98f81a85, type: 3}
 --- !u!136 &439972470
 CapsuleCollider:
   m_ObjectHideFlags: 0
