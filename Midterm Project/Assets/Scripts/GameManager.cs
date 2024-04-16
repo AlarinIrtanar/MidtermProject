@@ -54,5 +54,26 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void updateWinCondition(int updateVal)
+    {
+        //update the win condition and check if you have won
+        enemyCount -= updateVal;
+
+        if (enemyCount <= 0)
+        {
+            //win
+            statePaused();
+            menuActive = menuVictory;
+            menuActive.SetActive(isPaused);
+        }
+
+    }
+
+    public void gameOver()
+    {
+        statePaused();
+        menuActive = menuGameOver;
+        menuActive.SetActive(isPaused);
+    }
 
 }
