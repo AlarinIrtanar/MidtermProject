@@ -22,16 +22,16 @@ public class EnemyAI : MonoBehaviour, IDamage
     // Start is called before the first frame update
     void Start()
     {
-       // GameManager.Instance.updateGameGoal(1);
+       GameManager.instance.updateWinCondition(1);
     }
-    //
+    
     // Update is called once per frame
     void Update()
     {
         if (playerInRange)
         {
-            //playerDirection = GameManager.Instance.player.transform.position - transform.position;
-           // agent.SetDestination(GameManager.Instance.player.transform.position);
+            playerDirection = GameManager.instance.player.transform.position - transform.position;
+            agent.SetDestination(GameManager.instance.player.transform.position);
 
             if (!isShooting)
             {
@@ -75,11 +75,11 @@ public class EnemyAI : MonoBehaviour, IDamage
 
         StartCoroutine(flashRed());
 
-        //agent.SetDestination(GameManager.Instance.player.transform.position);
+        agent.SetDestination(GameManager.instance.player.transform.position);
 
         if (HP <= 0)
         {
-       //     GameManager.Instance.updateGameGoal(-1);
+            GameManager.instance.updateWinCondition(-1);
             Destroy(gameObject);
         }
     }
