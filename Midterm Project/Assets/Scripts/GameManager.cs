@@ -13,7 +13,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuVictory;
     [SerializeField] GameObject menuGameOver;
-    public GameObject playerHPBar;
+    public GameObject damageFlash;
+    public Image playerHPBar;
+    public TMP_Text enemyCountText;
+
     public GameObject player;
 
     public bool isPaused;
@@ -57,7 +60,7 @@ public class GameManager : MonoBehaviour
     public void updateWinCondition(int updateVal)
     {
         //update the win condition and check if you have won
-        enemyCount -= updateVal;
+        enemyCount += updateVal;
 
         if (enemyCount <= 0)
         {
