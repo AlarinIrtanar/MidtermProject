@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8265584669216733813}
   - component: {fileID: 6790767358613913174}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Bullet 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 5302610998091382541}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.942, y: 1.904, z: 3.3085}
-  m_LocalScale: {x: 0.003737281, y: 0.003737281, z: 0.003737281}
+  m_LocalPosition: {x: 3.942, y: 2, z: 3.3085}
+  m_LocalScale: {x: 0.015023211, y: 0.015023211, z: 0.015023211}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,9 +71,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6790767358613913174}
-  damage: 5
-  speed: 50
-  destroyTime: 5
+  damage: 7
+  speed: 20
+  destroyTime: 2
 --- !u!96 &2776137708001905809
 TrailRenderer:
   serializedVersion: 3
@@ -125,8 +125,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.049470156
-        value: 0.5046328
+        time: 0.099209994
+        value: 0.97815114
         inSlope: -0.048682716
         outSlope: -0.048682716
         tangentMode: 0
@@ -134,8 +134,8 @@ TrailRenderer:
         inWeight: 0.6511232
         outWeight: 0
       - serializedVersion: 3
-        time: 0.5000845
-        value: 0
+        time: 0.50270903
+        value: 0.51091003
         inSlope: 0.029464556
         outSlope: 0.029464556
         tangentMode: 0
