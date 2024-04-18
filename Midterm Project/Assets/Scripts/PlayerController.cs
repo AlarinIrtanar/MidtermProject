@@ -109,7 +109,13 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f,0.5f)), out hit, shootDist))
         {
             // THE RAYCAST HIT SOMETHING
-            Instantiate(spawnObjTemp, hit.point, transform.rotation); // temporary spawn something here
+           /*Instantiate(spawnObjTemp, hit.point, transform.rotation);*/ // temporary spawn something here
+            IDamage damage = hit.collider.GetComponent<IDamage>();
+
+            if(hit.transform != transform && damage != null)
+            {
+                damage.takeDamage(gunDamage);
+            }
         }
 
         yield return new WaitForSeconds(shootRate);
