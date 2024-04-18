@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         //update the win condition and check if you have won
         enemyCount += updateVal;
-        enemyCountText.text = enemyCount.ToString();
+        enemyCountText.text = enemyCount.ToString("F0");
 
         if (enemyCount <= 0)
         {
