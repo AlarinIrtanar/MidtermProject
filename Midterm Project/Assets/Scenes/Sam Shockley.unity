@@ -405,11 +405,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7725013617128150810, guid: d860d6a4d54833b4fa9eda24ff79b220, type: 3}
+      propertyPath: playerHPBar
+      value: 
+      objectReference: {fileID: 3906585796284108502}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d860d6a4d54833b4fa9eda24ff79b220, type: 3}
+--- !u!114 &3906585796284108502 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2895405864981489539, guid: d860d6a4d54833b4fa9eda24ff79b220, type: 3}
+  m_PrefabInstance: {fileID: 3906585796284108501}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

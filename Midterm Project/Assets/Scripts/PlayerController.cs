@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] CharacterController controller;
+    [SerializeField] int HP;
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
     [SerializeField] int maxJumps;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     bool isShooting;
     int timesJumped;
     float timeSinceDashStart;
+    int HPOriginal;
 
     [SerializeField] GameObject spawnObjTemp;
 
@@ -95,6 +97,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     IEnumerator Shoot()
     {
         isShooting = true;
@@ -110,5 +113,28 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
+    }
+    public void TakeDamage(int damage)
+    {
+        HP -= damage;
+        updatePlayerUI();
+        StartCoroutine(flashDamage());
+
+        if(HP <= 0)
+        {
+            GameManager.instance.gameOver();
+        }
+    }
+
+    void updatePlayerUI()
+    {
+        GameManager.instance.playerHPBar.fillAmount = (float)HP / HPOriginal;
+    }
+
+    IEnumerator flashDamage()
+    {
+        GameManager.instance.damageFlash.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        GameManager.instance.damageFlash.SetActive(false);
     }
 }
