@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     public void updateWinCondition(int updateVal)
     {
         //update the win condition and check if you have won
-        enemyCount -= updateVal;
+        enemyCount += updateVal;
 
         if (enemyCount <= 0)
         {
