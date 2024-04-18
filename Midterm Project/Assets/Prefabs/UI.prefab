@@ -1732,8 +1732,11 @@ MonoBehaviour:
   menuPause: {fileID: 992821880288227030}
   menuVictory: {fileID: 7615338866954812301}
   menuGameOver: {fileID: 6973064763774109321}
-  playerHPBar: {fileID: 7091791769253504009}
+  damageFlash: {fileID: 8557754889057595548}
+  playerHPBar: {fileID: 5148787886108550818}
+  enemyCountText: {fileID: 4287843426828517247}
   player: {fileID: 0}
+  playerScript: {fileID: 0}
   isPaused: 0
 --- !u!114 &2774687513781049882
 MonoBehaviour:

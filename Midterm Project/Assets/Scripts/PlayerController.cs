@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
-    [SerializeField] CharacterController controller;
+    public CharacterController controller;
     [SerializeField] int HP;
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour, IDamage
     int timesJumped;
     float timeSinceDashStart;
     int HPOriginal;
+    Vector3 fallVelocity; 
 
     [SerializeField] GameObject spawnObjTemp;
 
@@ -62,6 +63,12 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             timeSinceDashStart = dashDuration;
         }
+
+        //fall damage
+/*        if(fallVelocity)
+        {
+
+        }*/
     }
 
     /// <summary>

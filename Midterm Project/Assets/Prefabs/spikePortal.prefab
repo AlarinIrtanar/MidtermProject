@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 674276321175949105}
   - component: {fileID: 3684446103929733815}
   - component: {fileID: 3987649646459053093}
-  - component: {fileID: 7222224920735830278}
+  - component: {fileID: 1699414797587941284}
+  - component: {fileID: 4412113274447217316}
   m_Layer: 0
   m_Name: portal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &674276321175949105
 Transform:
@@ -84,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7222224920735830278
-SphereCollider:
+--- !u!136 &1699414797587941284
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,12 +100,27 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Radius: 0.4739672
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0.000000053397912, y: -0.0000000681196, z: -0.5206585}
+--- !u!114 &4412113274447217316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3876284765459421511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dcad8ab930ed2d478651c47da72c34c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportTarget: {fileID: 0}
 --- !u!1001 &668980211229384323
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -161,6 +177,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Large Spike Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6505793978512344643, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505793978512344643, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -181,15 +205,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3371335129570229262, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.387532
+      value: -2.3195438
       objectReference: {fileID: 0}
     - target: {fileID: 3371335129570229262, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000023841858
+      value: 0.0000009536743
       objectReference: {fileID: 0}
     - target: {fileID: 3371335129570229262, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.3438277
+      value: -2.8075578
       objectReference: {fileID: 0}
     - target: {fileID: 3371335129570229262, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -222,6 +246,14 @@ PrefabInstance:
     - target: {fileID: 6505793978512344643, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
       propertyPath: m_Name
       value: spikePortal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505793978512344643, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6505793978512344643, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

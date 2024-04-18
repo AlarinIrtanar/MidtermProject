@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public TMP_Text enemyCountText;
 
     public GameObject player;
+    public PlayerController playerScript;
 
     public bool isPaused;
     int enemyCount;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         player = GameObject.FindWithTag("Player");
+        playerScript = player.GetComponent<PlayerController>();
     }
 
     void Update()
