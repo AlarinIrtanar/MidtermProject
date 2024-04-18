@@ -123,13 +123,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 4679629378008239913}
-  HP: 0
-  speed: 20
-  jumpForce: 15
+  HP: 20
+  speed: 10
+  jumpForce: 10
   maxJumps: 2
   gravity: 35
-  shootDamage: 5
-  shootRate: 0.1
+  shootDamage: 3
+  shootRate: 0.2
   shootDist: 100
   gunDamage: 0
   dashSpeed: 30
