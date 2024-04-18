@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamage
 {
     [SerializeField] CharacterController controller;
     [SerializeField] int HP;
@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        HPOriginal = HP;
+        updatePlayerUI();
         timeSinceDashStart = dashDuration + dashCooldown + 1;
     }
 
@@ -109,13 +111,20 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f,0.5f)), out hit, shootDist))
         {
             // THE RAYCAST HIT SOMETHING
-            Instantiate(spawnObjTemp, hit.point, transform.rotation); // temporary spawn something here
+            IDamage dmg = hit.collider.GetComponent<IDamage>();
+            if (dmg != null && hit.transform != transform) // make sure you didn't hit yourself, too!
+            {
+                dmg.takeDamage(shootDamage);
+            }
+
+
+            //Instantiate(spawnObjTemp, hit.point, transform.rotation); // temporary spawn something here
         }
 
         yield return new WaitForSeconds(shootRate);
         isShooting = false;
     }
-    public void TakeDamage(int damage)
+    public void takeDamage(int damage)
     {
         HP -= damage;
         updatePlayerUI();
