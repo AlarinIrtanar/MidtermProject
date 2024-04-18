@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int shootDamage;
     [SerializeField] float shootRate;
     [SerializeField] int shootDist;
+    [SerializeField] int gunDamage;
 
     [SerializeField] float dashSpeed;
     [SerializeField] float dashDuration;
