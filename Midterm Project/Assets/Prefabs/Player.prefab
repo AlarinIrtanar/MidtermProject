@@ -135,6 +135,8 @@ MonoBehaviour:
   dashSpeed: 30
   dashDuration: 0.5
   dashCooldown: 2.5
+  dashFovChangeIntensity: 0.2
+  dashFovChangeLerpSpeed: 10
   spawnObjTemp: {fileID: 2569312439671438259, guid: ed9e660ca0682c54fa0c2b6c98f81a85, type: 3}
 --- !u!143 &4679629378008239913
 CharacterController:

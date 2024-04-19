@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] float dashSpeed;
     [SerializeField] float dashDuration;
     [SerializeField] float dashCooldown;
+    [SerializeField] float dashFovChangeIntensity; // 0 to 1
+    [SerializeField] float dashFovChangeLerpSpeed; // how fast to change the fov
 
     Vector3 moveDir;
     Vector3 velocity;
@@ -26,7 +28,8 @@ public class PlayerController : MonoBehaviour, IDamage
     int timesJumped;
     float timeSinceDashStart;
     int HPOriginal;
-    Vector3 fallVelocity; 
+    float camFovOriginal; // camera's original fov
+    float camFovTarget; // camera's target fov
 
     [SerializeField] GameObject spawnObjTemp;
 
@@ -36,6 +39,8 @@ public class PlayerController : MonoBehaviour, IDamage
         HPOriginal = HP;
         updatePlayerUI();
         timeSinceDashStart = dashDuration + dashCooldown + 1;
+        camFovOriginal = Camera.main.fieldOfView;
+        camFovTarget = camFovOriginal;
     }
 
     // Update is called once per frame
@@ -46,6 +51,9 @@ public class PlayerController : MonoBehaviour, IDamage
 
         // Do player movement
         Movement();
+
+        // Do camera fov update
+        UpdateCameraFov();
 
         // Do shoot coroutine
         if (Input.GetButton("Shoot") && !isShooting)
@@ -63,12 +71,6 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             timeSinceDashStart = dashDuration;
         }
-
-        //fall damage
-/*        if(fallVelocity)
-        {
-
-        }*/
     }
 
     /// <summary>
@@ -76,16 +78,26 @@ public class PlayerController : MonoBehaviour, IDamage
     /// </summary>
     void Movement()
     {
-        // Dash stuff
         timeSinceDashStart += Time.deltaTime;
         if (timeSinceDashStart < dashDuration)
         {
+            ///// Dash stuff /////
+            
+            // Fov stuff
+            camFovTarget = Mathf.Lerp(camFovOriginal, 179, dashFovChangeIntensity);
+
+            // Movement
             controller.Move(transform.forward * dashSpeed * Time.deltaTime);
             velocity.y = 0;
         }
         else
         {
-            // Non-dash movement
+            ///// Non-dash movement /////
+
+            // Fov stuff
+            camFovTarget = camFovOriginal;
+
+            // Movement
             if (controller.isGrounded)
             {
                 timesJumped = 0;
@@ -105,6 +117,15 @@ public class PlayerController : MonoBehaviour, IDamage
             controller.Move(velocity * Time.deltaTime);
             velocity.y -= (gravity / 2) * Time.deltaTime;
         }
+    }
+
+    /// <summary>
+    /// Does a tick of camera fov updating to match the target fov
+    /// </summary>
+    void UpdateCameraFov()
+    {
+        // Lerp the camera fov to the target fov
+        Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, camFovTarget, Mathf.Clamp(dashFovChangeLerpSpeed * Time.deltaTime, 0.0f, 1.0f));
     }
 
 
