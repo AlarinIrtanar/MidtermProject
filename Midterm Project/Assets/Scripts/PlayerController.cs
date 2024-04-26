@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour, IDamage
         // TODO: DO SHOOT THING HERE!!!
 
         gunList[selectedGun].ammoCurrent--;
-
+        GameManager.instance.ammoCurrentText.text = gunList[selectedGun].ammoCurrent.ToString("F0");
         UpdatePlayerUI();
 
         RaycastHit hit;
@@ -185,6 +185,7 @@ public class PlayerController : MonoBehaviour, IDamage
     void UpdatePlayerUI()
     {
         GameManager.instance.playerHPBar.fillAmount = (float)HP / HPOriginal;
+
     }
 
     IEnumerator FlashDamage()
@@ -201,6 +202,8 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         gunList.Add(gun);
         selectedGun = gunList.Count - 1;
+        GameManager.instance.ammoCurrentText.text = gunList[selectedGun].ammoCurrent.ToString("F0");
+        GameManager.instance.ammoMaxText.text = gunList[selectedGun].ammoMax.ToString("F0");
         ChangeGun();
 
         //shootDamage = gun.shootDamage;
