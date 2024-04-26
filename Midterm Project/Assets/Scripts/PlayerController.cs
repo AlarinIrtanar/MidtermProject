@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour, IDamage
         if (timeSinceDashStart < dashDuration)
         {
             ///// Dash stuff /////
-            
+
             // Fov stuff
             camFovTarget = Mathf.Lerp(camFovOriginal, 179, dashFovChangeIntensity);
 
@@ -148,7 +148,7 @@ public class PlayerController : MonoBehaviour, IDamage
         UpdatePlayerUI();
 
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f,0.5f)), out hit, shootDist))
+        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
         {
             // THE RAYCAST HIT SOMETHING
             IDamage dmg = hit.collider.GetComponent<IDamage>();
@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour, IDamage
         UpdatePlayerUI();
         StartCoroutine(FlashDamage());
 
-        if(HP <= 0)
+        if (HP <= 0)
         {
             GameManager.instance.gameOver();
         }
@@ -185,7 +185,6 @@ public class PlayerController : MonoBehaviour, IDamage
     void UpdatePlayerUI()
     {
         GameManager.instance.playerHPBar.fillAmount = (float)HP / HPOriginal;
-
     }
 
     IEnumerator FlashDamage()
@@ -198,6 +197,24 @@ public class PlayerController : MonoBehaviour, IDamage
     /// <summary>
     /// Gives a gun to the player
     /// </summary>
+    /// 
+
+    public bool RefillAmmo()
+    {
+        if (gunList.Count > 0)
+        {
+            for (int i = 0; i < gunList.Count; i++)
+            {
+                gunList[i].ammoCurrent = gunList[i].ammoMax;
+                GameManager.instance.ammoCurrentText.text = gunList[selectedGun].ammoCurrent.ToString("F0");
+            }
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public void GiveGun(GunStats gun)
     {
         gunList.Add(gun);
@@ -244,6 +261,9 @@ public class PlayerController : MonoBehaviour, IDamage
 
             gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[selectedGun].gunModel.GetComponent<MeshFilter>().sharedMesh;
             gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[selectedGun].gunModel.GetComponent<MeshRenderer>().sharedMaterial;
+
+            GameManager.instance.ammoCurrentText.text = gunList[selectedGun].ammoCurrent.ToString("F0");
+            GameManager.instance.ammoMaxText.text = gunList[selectedGun].ammoMax.ToString("F0");
 
             UpdatePlayerUI();
         }
