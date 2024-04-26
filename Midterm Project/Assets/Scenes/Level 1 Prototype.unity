@@ -10637,10 +10637,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikePortal
       objectReference: {fileID: 0}
+    - target: {fileID: 4091022491048123374, guid: 1009da2af9aae294880e7f609d7e7e77, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ed3bc484a252164190e19860bff6506, type: 2}
     - target: {fileID: 4412113274447217316, guid: 1009da2af9aae294880e7f609d7e7e77, type: 3}
       propertyPath: teleportTarget
       value: 
       objectReference: {fileID: 1817497673}
+    - target: {fileID: 7194046737819864831, guid: 1009da2af9aae294880e7f609d7e7e77, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ed3bc484a252164190e19860bff6506, type: 2}
+    - target: {fileID: 7194046737819864831, guid: 1009da2af9aae294880e7f609d7e7e77, type: 3}
+      propertyPath: m_SelectedEditorRenderState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8976107980688914332, guid: 1009da2af9aae294880e7f609d7e7e77, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
