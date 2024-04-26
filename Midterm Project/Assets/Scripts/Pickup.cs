@@ -13,18 +13,19 @@ public class Pickup : MonoBehaviour
 
     void Update()
     {
-        
+        transform.Rotate(0, 45.0f * Time.deltaTime, 0);
     }
 
     void OnTriggerEnter(Collider other)
     {
-
-
         if (other.CompareTag("Player"))
         {
-            //pickup item
-
-            Destroy(gameObject);
+           //only trigger if the player has guns
+           if(GameManager.instance.playerScript.RefillAmmo())
+            {
+                Destroy(gameObject);
+            }
+           //add functionality to only destroy if ammo wasn't already full
         }
     }
 }
