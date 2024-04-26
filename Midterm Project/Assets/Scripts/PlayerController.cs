@@ -48,33 +48,36 @@ public class PlayerController : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        // Draw player line of fire for debug purposes
-        Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDist, Color.green);
-
-        // Do gun update
-        SelectGun();
-
-        // Do player movement
-        Movement();
-
-        // Do camera fov update
-        UpdateCameraFov();
-
-        // Do shoot coroutine
-        if (Input.GetButton("Shoot") && !isShooting)
+        if (!GameManager.instance.isPaused)
         {
-            StartCoroutine(Shoot());
-        }
+            // Draw player line of fire for debug purposes
+            Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward * shootDist, Color.green);
 
-        // Do dash coroutine
-        if (Input.GetButtonDown("Dash") && timeSinceDashStart >= dashDuration + dashCooldown)
-        {
-            timeSinceDashStart = 0;
-        }
+            // Do gun update
+            SelectGun();
 
-        if (Input.GetButtonUp("Dash") && timeSinceDashStart <= dashDuration)
-        {
-            timeSinceDashStart = dashDuration;
+            // Do player movement
+            Movement();
+
+            // Do camera fov update
+            UpdateCameraFov();
+
+            // Do shoot coroutine
+            if (Input.GetButton("Shoot") && !isShooting && gunList.Count > 0 && gunList[selectedGun].ammoCurrent > 0)
+            {
+                StartCoroutine(Shoot());
+            }
+
+            // Do dash coroutine
+            if (Input.GetButtonDown("Dash") && timeSinceDashStart >= dashDuration + dashCooldown)
+            {
+                timeSinceDashStart = 0;
+            }
+
+            if (Input.GetButtonUp("Dash") && timeSinceDashStart <= dashDuration)
+            {
+                timeSinceDashStart = dashDuration;
+            }
         }
     }
 
@@ -141,6 +144,8 @@ public class PlayerController : MonoBehaviour, IDamage
         // TODO: DO SHOOT THING HERE!!!
 
         gunList[selectedGun].ammoCurrent--;
+
+        UpdatePlayerUI();
 
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f,0.5f)), out hit, shootDist))
