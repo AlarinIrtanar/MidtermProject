@@ -173,6 +173,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3570944055537386861, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ed3bc484a252164190e19860bff6506, type: 2}
     - target: {fileID: 6505793978512344643, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
       propertyPath: m_Name
       value: Large Spike Variant (1)
@@ -243,6 +247,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3570944055537386861, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ed3bc484a252164190e19860bff6506, type: 2}
     - target: {fileID: 6505793978512344643, guid: 2aba3ab5f58e9c0489d925d5096059cf, type: 3}
       propertyPath: m_Name
       value: spikePortal
