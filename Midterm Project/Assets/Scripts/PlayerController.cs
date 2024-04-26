@@ -201,14 +201,26 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public bool RefillAmmo()
     {
+        bool gainedAmmo = false;
         if (gunList.Count > 0)
         {
             for (int i = 0; i < gunList.Count; i++)
             {
-                gunList[i].ammoCurrent = gunList[i].ammoMax;
-                GameManager.instance.ammoCurrentText.text = gunList[selectedGun].ammoCurrent.ToString("F0");
+                if (gunList[i].ammoCurrent != gunList[i].ammoMax)
+                {
+                    gainedAmmo = true;
+                    gunList[i].ammoCurrent = gunList[i].ammoMax;
+                    GameManager.instance.ammoCurrentText.text = gunList[selectedGun].ammoCurrent.ToString("F0");
+                }
             }
-            return true;
+            if (gainedAmmo)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
@@ -248,7 +260,7 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
-    /// <summary>
+    /// <summary>w
     /// Updates the gun to whatever gun you have selected
     /// </summary>
     void ChangeGun()
