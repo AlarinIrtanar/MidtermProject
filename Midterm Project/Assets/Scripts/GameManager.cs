@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject damageFlash;
     public Image playerHPBar;
     public TMP_Text enemyCountText;
+    public TMP_Text ammoCurrentText;
+    public TMP_Text ammoMaxText;
 
     public GameObject player;
     public PlayerController playerScript;

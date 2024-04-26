@@ -56,7 +56,7 @@ MonoBehaviour:
   model: {fileID: 1208445423752543936}
   agent: {fileID: 2025898120821527462}
   shootPos: {fileID: 2546705464253684403}
-  HP: 40
+  HP: 10
   targetSpeed: 30
   bullet: {fileID: 5302610998091382541, guid: ebcaf38dde9634e4eaf64b47430a1874, type: 3}
   shootRate: 0.7
