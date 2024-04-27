@@ -998,6 +998,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8308934339084942915, guid: a736b6e0fe710d7459a775b83e665646, type: 3}
+      propertyPath: m_Size.x
+      value: 1529.5522
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308934339084942915, guid: a736b6e0fe710d7459a775b83e665646, type: 3}
+      propertyPath: m_Size.y
+      value: 912.5445
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308934339084942915, guid: a736b6e0fe710d7459a775b83e665646, type: 3}
+      propertyPath: m_Size.z
+      value: 945.48425
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308934339084942915, guid: a736b6e0fe710d7459a775b83e665646, type: 3}
+      propertyPath: m_Center.x
+      value: 24.274883
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308934339084942915, guid: a736b6e0fe710d7459a775b83e665646, type: 3}
+      propertyPath: m_Center.y
+      value: -5.072027
+      objectReference: {fileID: 0}
+    - target: {fileID: 8308934339084942915, guid: a736b6e0fe710d7459a775b83e665646, type: 3}
+      propertyPath: m_Center.z
+      value: -22.564678
+      objectReference: {fileID: 0}
     - target: {fileID: 8998760896935236579, guid: a736b6e0fe710d7459a775b83e665646, type: 3}
       propertyPath: m_Name
       value: AmmoPickup
