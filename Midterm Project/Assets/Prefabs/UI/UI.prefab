@@ -1735,8 +1735,8 @@ MonoBehaviour:
   damageFlash: {fileID: 8557754889057595548}
   playerHPBar: {fileID: 5148787886108550818}
   enemyCountText: {fileID: 4287843426828517247}
-  ammoCurrentText: {fileID: 0}
-  ammoMaxText: {fileID: 0}
+  ammoCurrentText: {fileID: 7064636678442630516}
+  ammoMaxText: {fileID: 4542875660280240657}
   player: {fileID: 0}
   playerScript: {fileID: 0}
   isPaused: 0
