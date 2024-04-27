@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject player;
     public PlayerController playerScript;
+    public GameObject playerSpawnPos;
+
 
     public bool isPaused;
     int enemyCount;
@@ -30,6 +32,9 @@ public class GameManager : MonoBehaviour
         instance = this;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerController>();
+
+        playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
+        
     }
 
     void Update()

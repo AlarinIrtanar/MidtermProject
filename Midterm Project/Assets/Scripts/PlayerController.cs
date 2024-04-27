@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour, IDamage
     void Start()
     {
         HPOriginal = HP;
-        UpdatePlayerUI();
+        spawnPlayer();
         timeSinceDashStart = dashDuration + dashCooldown + 1;
         camFovOriginal = Camera.main.fieldOfView;
         camFovTarget = camFovOriginal;
@@ -185,6 +185,7 @@ public class PlayerController : MonoBehaviour, IDamage
     void UpdatePlayerUI()
     {
         GameManager.instance.playerHPBar.fillAmount = (float)HP / HPOriginal;
+        
     }
 
     IEnumerator FlashDamage()
@@ -279,5 +280,14 @@ public class PlayerController : MonoBehaviour, IDamage
 
             UpdatePlayerUI();
         }
+    }
+    public void spawnPlayer()
+    {
+        HP = HPOriginal;
+        UpdatePlayerUI();
+
+        controller.enabled = false;
+        transform.position = GameManager.instance.playerSpawnPos.transform.position;
+        controller.enabled = true;
     }
 }
