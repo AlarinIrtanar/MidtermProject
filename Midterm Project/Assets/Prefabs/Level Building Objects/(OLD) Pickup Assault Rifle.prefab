@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6217083016032986904}
   - component: {fileID: 2397550420640834867}
   m_Layer: 0
-  m_Name: Pickup Assault Rifle
+  m_Name: (OLD) Pickup Assault Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

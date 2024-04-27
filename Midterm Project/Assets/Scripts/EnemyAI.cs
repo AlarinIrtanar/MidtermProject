@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] float RoamPauseTimer;
     [SerializeField] float animspeedTrans;
 
+    [SerializeField] bool isMelee; // force the enemy to be melee
     [SerializeField] GameObject bullet;
     [SerializeField] float shootRate;
 
@@ -42,19 +43,19 @@ public class EnemyAI : MonoBehaviour, IDamage
     void Update()
     {
         float animspeed = agent.velocity.normalized.magnitude;
-        animator.SetFloat("Speed", Mathf.Lerp(animator.GetFloat("Speed"), animspeed, Time.deltaTime * animspeedTrans));
+        animator.SetFloat("Speed", Mathf.MoveTowards(animator.GetFloat("Speed"), animspeed, Time.deltaTime * animspeedTrans));
 
         if (playerInRange && !CanSeePlayer())
         {
-            StartCoroutine(roam());
+            StartCoroutine(Roam());
         }
         else if (!playerInRange)
         {
-            StartCoroutine(roam());
+            StartCoroutine(Roam());
         }
     }
 
-    IEnumerator roam()
+    IEnumerator Roam()
     {
         if (!destinationChosen && agent.remainingDistance < 0.05f)
         {
@@ -92,12 +93,15 @@ public class EnemyAI : MonoBehaviour, IDamage
 
                 if (!isShooting)
                 {
-                    StartCoroutine(shoot());
+                    if (!isMelee || agent.remainingDistance < 1.0f)
+                    {
+                        StartCoroutine(Attack());
+                    }
                 }
 
                 if (agent.remainingDistance <= agent.stoppingDistance)
                 {
-                    faceTarget();
+                    FaceTarget();
                 }
                 return true;
             }
@@ -126,10 +130,10 @@ public class EnemyAI : MonoBehaviour, IDamage
         }
     }
 
-    void faceTarget()
+    void FaceTarget()
     {
         Quaternion rota = Quaternion.LookRotation(new Vector3(playerDirection.x, transform.position.y, playerDirection.z));
-        transform.rotation = Quaternion.Lerp(transform.rotation, rota, Time.deltaTime * targetSpeed);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rota, Time.deltaTime * targetSpeed);
     }
 
     public void TakeDamage(int amount)
@@ -137,7 +141,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         HP -= amount;
         WeaponCollideOff();
         animator.SetTrigger("Damage");
-        StartCoroutine(flashRed());
+        StartCoroutine(FlashRed());
 
         agent.SetDestination(GameManager.instance.player.transform.position);
 
@@ -147,14 +151,14 @@ public class EnemyAI : MonoBehaviour, IDamage
             Destroy(gameObject);
         }
     }
-    IEnumerator flashRed()
+    IEnumerator FlashRed()
     {
         model.material.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         model.material.color = Color.white;
     }
 
-    IEnumerator shoot()
+    IEnumerator Attack()
     {
         isShooting = true;
         animator.SetTrigger("Attack");
