@@ -31,6 +31,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     float angleToPlayer;
     float stoppingDistanceOrig;
 
+    public WaveSpawner mySpawner; // the spawner the enemy came from
 
     // Start is called before the first frame update
     void Start()
@@ -147,7 +148,9 @@ public class EnemyAI : MonoBehaviour, IDamage
 
         if (HP <= 0)
         {
+            // DEATH
             GameManager.instance.updateWinCondition(-1);
+            if (mySpawner) mySpawner.UpdateEnemyNumber();
             Destroy(gameObject);
         }
     }

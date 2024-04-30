@@ -212,10 +212,7 @@ MonoBehaviour:
   maxJumps: 2
   gravity: 35
   gunList: []
-  gunModel: {fileID: 1003660915507275146}
-  shootDamage: 5
-  shootRate: 0.1
-  shootDist: 100
+  camFovOriginal: 60
   dashSpeed: 30
   dashDuration: 0.5
   dashCooldown: 2.5

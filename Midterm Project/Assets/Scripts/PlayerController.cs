@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
+    [Header("----- Player Stats -----")]
     public CharacterController controller;
     [SerializeField] int HP;
     [SerializeField] float speed;
@@ -11,12 +12,15 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] int maxJumps;
     [SerializeField] float gravity;
 
+    [Header("----- Guns -----")]
     [SerializeField] List<GunStats> gunList = new List<GunStats>();
     [SerializeField] GameObject gunModel;
-    [SerializeField] int shootDamage;
-    [SerializeField] float shootRate;
-    [SerializeField] int shootDist;
+    int shootDamage;
+    float shootRate;
+    int shootDist;
 
+    [Header("----- Dash Properties -----")]
+    [SerializeField] float camFovOriginal;
     [SerializeField] float dashSpeed;
     [SerializeField] float dashDuration;
     [SerializeField] float dashCooldown;
@@ -29,7 +33,6 @@ public class PlayerController : MonoBehaviour, IDamage
     int timesJumped;
     float timeSinceDashStart;
     int HPOriginal;
-    float camFovOriginal; // camera's original fov
     float camFovTarget; // camera's target fov
     int selectedGun; // which gun we have equiped in our inventory
 
@@ -41,7 +44,6 @@ public class PlayerController : MonoBehaviour, IDamage
         HPOriginal = HP;
         spawnPlayer();
         timeSinceDashStart = dashDuration + dashCooldown + 1;
-        camFovOriginal = Camera.main.fieldOfView;
         camFovTarget = camFovOriginal;
     }
 
