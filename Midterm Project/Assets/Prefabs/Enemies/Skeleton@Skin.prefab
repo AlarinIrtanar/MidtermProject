@@ -1072,6 +1072,7 @@ MonoBehaviour:
   RoamDistance: 30
   RoamPauseTimer: 4
   animspeedTrans: 1
+  isMelee: 0
   bullet: {fileID: 0}
   shootRate: 1
 --- !u!195 &1510040051176184163
