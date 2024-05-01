@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
 
     public bool isPaused;
-    int enemyCount;
+    public int enemyCount;
 
     void Awake()
     {

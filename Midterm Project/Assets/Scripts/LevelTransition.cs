@@ -7,7 +7,7 @@ public class LevelTransition : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && GameManager.instance.enemyCount <= 0)
         {
             SceneManager.LoadSceneAsync(1);
         }
