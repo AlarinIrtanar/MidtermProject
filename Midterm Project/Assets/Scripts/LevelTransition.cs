@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelTransition : MonoBehaviour
 {
+    [SerializeField] int currentLevel;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player") && GameManager.instance.enemyCount <= 0)
         {
-            SceneManager.LoadSceneAsync(1);
+            currentLevel++;
+            SceneManager.LoadSceneAsync(currentLevel);
         }
     }
 }
