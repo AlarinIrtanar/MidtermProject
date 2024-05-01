@@ -913,13 +913,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5655466377872459275}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5308495, y: 0.46991074, z: -0.5262677, w: 0.4694944}
-  m_LocalPosition: {x: -0.0155, y: 0.0035, z: 0.0551}
-  m_LocalScale: {x: 0.03362, y: 0.10017207, z: 0.030165043}
+  m_LocalRotation: {x: -0.5022029, y: 0.28460875, z: -0.675093, w: 0.45939055}
+  m_LocalPosition: {x: -0.0343, y: 0.0206, z: 0.0602}
+  m_LocalScale: {x: 0.03362, y: 0.08218327, z: 0.030165043}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8011000863696180242}
-  m_LocalEulerAnglesHint: {x: -0.221, y: 90.3, z: -96.749}
+  m_LocalEulerAnglesHint: {x: -4.424, y: 70.453, z: -114.655}
 --- !u!136 &3405232519356558226
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1075,6 +1075,7 @@ MonoBehaviour:
   isMelee: 0
   bullet: {fileID: 0}
   shootRate: 1
+  mySpawner: {fileID: 0}
 --- !u!195 &1510040051176184163
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1089,9 +1090,9 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 4
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
