@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Jack San Vicente Level 1.unity
+    guid: a586dd2a825205b498d2b27dbc23951c
+  - enabled: 1
+    path: Assets/Scenes/Jack San Vicente Level 2.unity
+    guid: 7ae44f56be796464092c66200ab66661
   m_configObjects: {}

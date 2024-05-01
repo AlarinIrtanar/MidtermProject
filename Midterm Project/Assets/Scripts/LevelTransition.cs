@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class KillZone : MonoBehaviour
+public class LevelTransition : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        IDamage dmg = other.GetComponent<IDamage>();
-        if (dmg != null)
+        if(other.CompareTag("Player"))
         {
-            dmg.TakeDamage(9999);
+            SceneManager.LoadSceneAsync(1);
         }
     }
 }
