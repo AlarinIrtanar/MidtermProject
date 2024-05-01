@@ -20,5 +20,14 @@ public class Melee : MonoBehaviour
             dmg.TakeDamage(damage);
             hitHappened = true;
         }
+
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        hitHappened = false;
     }
 }
+
+
