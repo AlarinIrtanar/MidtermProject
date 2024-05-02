@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
-    [SerializeField] AudioSource audio;
+    [Header("----- Player Stuff -----")]
+    public CharacterController controller;
+    [SerializeField] AudioSource aud;
 
     [Header("----- Player Stats -----")]
-    public CharacterController controller;
     [SerializeField] int HP;
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
@@ -32,7 +33,18 @@ public class PlayerController : MonoBehaviour, IDamage
 
     [Header("----- Audio -----")]
     [SerializeField] AudioClip audioAmmoRefill;
-    [Range(1, 10)][SerializeField] float audioAmmoRefillVol;
+    [SerializeField][Range(0, 1)] float audioAmmoRefillVol;
+    [SerializeField] AudioClip[] audStep;
+    [SerializeField][Range(0, 1)] float audStepVol;
+    [SerializeField] float stepSize;
+    [SerializeField] AudioClip[] audJump;
+    [SerializeField][Range(0, 1)] float audJumpVol;
+    [SerializeField] AudioClip[] audHurt;
+    [SerializeField][Range(0, 1)] float audHurtVol;
+    [SerializeField] AudioClip audDash;
+    [SerializeField][Range(0,1)] float audDashVol;
+    [SerializeField] AudioClip[] audGunSelect;
+    [SerializeField][Range(0, 1)] float audGunSelectVol;
 
     Vector3 moveDir;
     Vector3 velocity;
@@ -42,6 +54,7 @@ public class PlayerController : MonoBehaviour, IDamage
     int HPOriginal;
     float camFovTarget; // camera's target fov
     int selectedGun; // which gun we have equiped in our inventory
+    float curStepDist; // used to know when to play another step sound
 
     [SerializeField] GameObject spawnObjTemp;
 
@@ -81,6 +94,7 @@ public class PlayerController : MonoBehaviour, IDamage
             if (Input.GetButtonDown("Dash") && timeSinceDashStart >= dashDuration + dashCooldown)
             {
                 timeSinceDashStart = 0;
+                aud.PlayOneShot(audDash, audDashVol);
             }
 
             if (Input.GetButtonUp("Dash") && timeSinceDashStart <= dashDuration)
@@ -128,11 +142,23 @@ public class PlayerController : MonoBehaviour, IDamage
             {
                 timesJumped++;
                 velocity.y = jumpForce;
+                aud.PlayOneShot(audJump[Random.Range(0, audJump.Length)], audJumpVol);
             }
 
             velocity.y -= (gravity / 2) * Time.deltaTime;
             controller.Move(velocity * Time.deltaTime);
             velocity.y -= (gravity / 2) * Time.deltaTime;
+
+            // Do step sound stuff yay
+            if (controller.isGrounded)
+            {
+                curStepDist += moveDir.magnitude * speed * Time.deltaTime;
+                if (curStepDist >= stepSize)
+                {
+                    aud.PlayOneShot(audStep[Random.Range(0,audStep.Length)], audStepVol);
+                    curStepDist = 0;
+                }
+            }
         }
     }
 
@@ -155,6 +181,8 @@ public class PlayerController : MonoBehaviour, IDamage
         gunList[selectedGun].ammoCurrent--;
         GameManager.instance.ammoCurrentText.text = gunList[selectedGun].ammoCurrent.ToString("F0");
         UpdatePlayerUI();
+
+        aud.PlayOneShot(gunList[selectedGun].shootSound, gunList[selectedGun].shootSoundVolume);
 
         RaycastHit hit;
         if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
@@ -182,6 +210,7 @@ public class PlayerController : MonoBehaviour, IDamage
     public void TakeDamage(int damage)
     {
         HP -= damage;
+        aud.PlayOneShot(audHurt[Random.Range(0, audHurt.Length)], audHurtVol);
         UpdatePlayerUI();
         StartCoroutine(FlashDamage());
 
@@ -225,7 +254,7 @@ public class PlayerController : MonoBehaviour, IDamage
             }
             if (gainedAmmo)
             {
-                audio.PlayOneShot(audioAmmoRefill, audioAmmoRefillVol);
+                aud.PlayOneShot(audioAmmoRefill, audioAmmoRefillVol);
                 return true;
             }
             else
@@ -287,6 +316,8 @@ public class PlayerController : MonoBehaviour, IDamage
 
             GameManager.instance.ammoCurrentText.text = gunList[selectedGun].ammoCurrent.ToString("F0");
             GameManager.instance.ammoMaxText.text = gunList[selectedGun].ammoMax.ToString("F0");
+
+            aud.PlayOneShot(audGunSelect[Random.Range(0, audGunSelect.Length)], audGunSelectVol);
 
             UpdatePlayerUI();
         }
