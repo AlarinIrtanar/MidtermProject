@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] Transform shootPos;
     [SerializeField] Transform headPos;
     [SerializeField] Collider weaponCollider;
-
+    
     [SerializeField] int HP;
     [SerializeField] int targetSpeed;
     [SerializeField] float ViewCone;
@@ -79,7 +79,7 @@ public class EnemyAI : MonoBehaviour, IDamage
         playerDirection = GameManager.instance.player.transform.position - headPos.position;
         angleToPlayer = Vector3.Angle(new Vector3(playerDirection.x, playerDirection.y + 1, playerDirection.z), transform.forward);
         //Debug.Log(angleToPlayer);
-        Debug.DrawRay(headPos.position, playerDirection);
+        Debug.DrawRay(headPos.position, playerDirection);//Debug Function
 
         RaycastHit hit;
 
