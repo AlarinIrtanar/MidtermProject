@@ -1502,6 +1502,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1279474734709375517, guid: 37f0b97ea5bb51c47af44de812dc83b3, type: 3}
+      propertyPath: isMelee
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6070475622568640773, guid: 37f0b97ea5bb51c47af44de812dc83b3, type: 3}
       propertyPath: m_Name
       value: Skeleton@Skin (1)
@@ -4739,6 +4743,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1264923726294901654, guid: 898b4e597f607344582a56b4627103a4, type: 3}
+      propertyPath: audioAmmoRefillVol
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3393081137734299344, guid: 898b4e597f607344582a56b4627103a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.23714429
@@ -6131,6 +6139,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2088910205}
+  - {fileID: 1703048263}
   - {fileID: 377768465}
   - {fileID: 1413668310}
   - {fileID: 939521000}
@@ -6152,4 +6161,3 @@ SceneRoots:
   - {fileID: 2086833935}
   - {fileID: 1735847191}
   - {fileID: 1334208621}
-  - {fileID: 1703048263}

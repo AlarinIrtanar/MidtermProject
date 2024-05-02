@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour, IDamage
 {
+    [SerializeField] AudioSource audio;
+
     [Header("----- Player Stats -----")]
     public CharacterController controller;
     [SerializeField] int HP;
@@ -26,6 +28,11 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] float dashCooldown;
     [SerializeField] float dashFovChangeIntensity; // 0 to 1
     [SerializeField] float dashFovChangeLerpSpeed; // how fast to change the fov
+
+
+    [Header("----- Audio -----")]
+    [SerializeField] AudioClip audioAmmoRefill;
+    [Range(1, 10)][SerializeField] float audioAmmoRefillVol;
 
     Vector3 moveDir;
     Vector3 velocity;
@@ -218,6 +225,7 @@ public class PlayerController : MonoBehaviour, IDamage
             }
             if (gainedAmmo)
             {
+                audio.PlayOneShot(audioAmmoRefill, audioAmmoRefillVol);
                 return true;
             }
             else

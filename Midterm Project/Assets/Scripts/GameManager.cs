@@ -34,12 +34,12 @@ public class GameManager : MonoBehaviour
         playerScript = player.GetComponent<PlayerController>();
 
         playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
-        
+
     }
 
     void Update()
     {
-        if(Input.GetButtonDown("Cancel") && menuActive == null)
+        if (Input.GetButtonDown("Cancel") && menuActive == null)
         {
             statePaused();
             menuActive = menuPause;
@@ -74,7 +74,11 @@ public class GameManager : MonoBehaviour
 
         if ((enemyCount <= 0 && !WaveManager.instance) || (enemyCount <= 0 && WaveManager.instance && WaveManager.instance.waveCurrent >= WaveManager.instance.spawners.Length))
         {
-            //win
+            //if level 1 activate note to tell player to get to portal
+            /*
+                
+            */
+            //else
             statePaused();
             menuActive = menuVictory;
             menuActive.SetActive(isPaused);

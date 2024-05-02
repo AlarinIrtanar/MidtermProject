@@ -11,7 +11,7 @@ public class EnemyAI : MonoBehaviour, IDamage
     [SerializeField] Transform shootPos;
     [SerializeField] Transform headPos;
     [SerializeField] Collider weaponCollider;
-
+    
     [SerializeField] int HP;
     [SerializeField] int targetSpeed;
     [SerializeField] float ViewCone;

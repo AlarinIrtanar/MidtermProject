@@ -521,6 +521,37 @@ Transform:
   - {fileID: 4092880340221367325}
   m_Father: {fileID: 2749988515676258074}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6269127269144522182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5059090774524464847}
+  m_Layer: 0
+  m_Name: HeadPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5059090774524464847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6269127269144522182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7867571409541705028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6449066993540960914
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +619,7 @@ Transform:
   m_Children:
   - {fileID: 8580399124234935112}
   - {fileID: 8040437254592867267}
+  - {fileID: 5059090774524464847}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1522872891064587756
@@ -606,7 +638,7 @@ MonoBehaviour:
   agent: {fileID: 4431443461695570287}
   animator: {fileID: 8725093099216103705}
   shootPos: {fileID: 0}
-  headPos: {fileID: 6393403006646273611}
+  headPos: {fileID: 5059090774524464847}
   weaponCollider: {fileID: 0}
   HP: 10
   targetSpeed: 90
@@ -617,6 +649,7 @@ MonoBehaviour:
   isMelee: 1
   bullet: {fileID: 0}
   shootRate: 0
+  mySpawner: {fileID: 0}
 --- !u!95 &8725093099216103705
 Animator:
   serializedVersion: 5
