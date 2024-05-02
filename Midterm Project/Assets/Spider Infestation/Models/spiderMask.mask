@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: spiderMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: rig
+    m_Weight: 1
+  - m_Path: rig/DEF-root
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-head
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-head/DEF-fang_1.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-head/DEF-fang_1.L/DEF-fang_2.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-head/DEF-fang_1.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-head/DEF-fang_1.R/DEF-fang_2.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_a1.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_a1.L/DEF-leg_a2.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_a1.L/DEF-leg_a2.L/DEF-leg_a3.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_a1.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_a1.R/DEF-leg_a2.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_a1.R/DEF-leg_a2.R/DEF-leg_a3.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_b1.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_b1.L/DEF-leg_b2.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_b1.L/DEF-leg_b2.L/DEF-leg_b3.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_b1.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_b1.R/DEF-leg_b2.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_b1.R/DEF-leg_b2.R/DEF-leg_b3.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_c1.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_c1.L/DEF-leg_c2.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_c1.L/DEF-leg_c2.L/DEF-leg_c3.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_c1.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_c1.R/DEF-leg_c2.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_c1.R/DEF-leg_c2.R/DEF-leg_c3.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_d1.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_d1.L/DEF-leg_d2.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_d1.L/DEF-leg_d2.L/DEF-leg_d3.L
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_d1.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_d1.R/DEF-leg_d2.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-leg_d1.R/DEF-leg_d2.R/DEF-leg_d3.R
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-waist
+    m_Weight: 1
+  - m_Path: rig/DEF-root/DEF-thorax/DEF-waist/DEF-abdomen
+    m_Weight: 1
+  - m_Path: spider
+    m_Weight: 1

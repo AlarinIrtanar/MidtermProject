@@ -8,10 +8,19 @@ public class LevelTransition : MonoBehaviour
     [SerializeField] int currentLevel;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && GameManager.instance.enemyCount <= 0)
+        if (other.CompareTag("Player"))
         {
-            currentLevel++;
-            SceneManager.LoadSceneAsync(currentLevel);
+            if ((GameManager.instance.enemyCount <= 0 && !WaveManager.instance) || (GameManager.instance.enemyCount <= 0 && WaveManager.instance && WaveManager.instance.waveCurrent >= WaveManager.instance.spawners.Length))
+            {
+                currentLevel++;
+                SceneManager.LoadSceneAsync(currentLevel);
+                if (currentLevel >= 2)
+                {
+                    GameManager.instance.statePaused();
+                    GameManager.instance.menuActive = GameManager.instance.menuVictory;
+                    GameManager.instance.menuActive.SetActive(GameManager.instance.isPaused);
+                }
+            }
         }
     }
 }

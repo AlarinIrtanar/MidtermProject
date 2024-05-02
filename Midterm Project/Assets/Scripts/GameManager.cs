@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] GameObject menuActive;
-    [SerializeField] GameObject menuPause;
-    [SerializeField] GameObject menuVictory;
+    public GameObject menuActive;
+    public GameObject menuPause;
+    public GameObject menuVictory;
     [SerializeField] GameObject menuGameOver;
     public GameObject damageFlash;
     public Image playerHPBar;
@@ -72,17 +72,17 @@ public class GameManager : MonoBehaviour
         enemyCount += updateVal;
         enemyCountText.text = enemyCount.ToString("F0");
 
-        if ((enemyCount <= 0 && !WaveManager.instance) || (enemyCount <= 0 && WaveManager.instance && WaveManager.instance.waveCurrent >= WaveManager.instance.spawners.Length))
+        /*if ((enemyCount <= 0 && !WaveManager.instance) || (enemyCount <= 0 && WaveManager.instance && WaveManager.instance.waveCurrent >= WaveManager.instance.spawners.Length))
         {
             //if level 1 activate note to tell player to get to portal
-            /*
+            *//*
                 
-            */
+            *//*
             //else
             statePaused();
             menuActive = menuVictory;
             menuActive.SetActive(isPaused);
-        }
+        }*/
 
     }
 

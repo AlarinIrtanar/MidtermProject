@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunModel: {fileID: 8105093614528831879, guid: ea96cf43fa5d15147921a167ed9e68f7, type: 3}
   shootDamage: 5
-  shootRate: 2
+  shootRate: 1.5
   shootDist: 10000
-  ammoCurrent: 5
-  ammoMax: 5
+  ammoCurrent: 10
+  ammoMax: 10
   hitEffect: {fileID: 1106925967614786564, guid: 326eee8c517afef4e841203deeb455b8, type: 3}
   shootSound: {fileID: 8300000, guid: 6b66020826ccd0b45b8e6149025aa460, type: 3}
   shootSoundVolume: 0.593
