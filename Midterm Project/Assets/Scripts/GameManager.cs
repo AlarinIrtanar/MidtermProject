@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         enemyCount += updateVal;
         enemyCountText.text = enemyCount.ToString("F0");
 
-        if (enemyCount <= 0)
+        if ((enemyCount <= 0 && !WaveManager.instance) || (enemyCount <= 0 && WaveManager.instance && WaveManager.instance.waveCurrent >= WaveManager.instance.spawners.Length))
         {
             //win
             statePaused();

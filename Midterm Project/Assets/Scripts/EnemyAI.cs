@@ -38,6 +38,10 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         startingPos = transform.position;
         stoppingDistanceOrig = agent.stoppingDistance;
+        if (!mySpawner)
+        { 
+            GameManager.instance.updateWinCondition(1);
+        }
     }
 
     // Update is called once per frame

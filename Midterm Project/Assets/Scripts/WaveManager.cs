@@ -14,6 +14,10 @@ public class WaveManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+    }
+
+    void Start()
+    {
         StartCoroutine(StartWave());
     }
 

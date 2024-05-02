@@ -50,7 +50,10 @@ public class WaveSpawner : MonoBehaviour
         if (numKilled >= amountToSpawn)
         {
             // This wave has been wiped!
+            // Reset this spawner and start the next wave!
             startSpawning = false;
+            numKilled = 0;
+            numSpawned = 0;
             StartCoroutine(WaveManager.instance.StartWave());
         }
     }
