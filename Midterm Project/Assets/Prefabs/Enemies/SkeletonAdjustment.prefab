@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 4307850823607377296}
   - component: {fileID: 3281893377766923621}
   m_Layer: 0
-  m_Name: Skeleton@Skin
+  m_Name: SkeletonAdjustment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,7 +713,7 @@ MonoBehaviour:
   RoamDistance: 30
   RoamPauseTimer: 4
   animspeedTrans: 1
-  isMelee: 0
+  isMelee: 1
   bullet: {fileID: 0}
   shootRate: 1
   mySpawner: {fileID: 0}
@@ -726,12 +726,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 4328551891676734981}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.05
   m_Speed: 10
-  m_Acceleration: 8
+  m_Acceleration: 16
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 4
+  m_AngularSpeed: 300
+  m_StoppingDistance: 1.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 0
   m_AutoRepath: 1
