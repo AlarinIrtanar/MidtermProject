@@ -608,7 +608,8 @@ GameObject:
   - component: {fileID: -8407196625074351607}
   - component: {fileID: -4777043813194261881}
   - component: {fileID: 1177921872131022403}
-  - component: {fileID: 394801103207318527}
+  - component: {fileID: 8546992122506870074}
+  - component: {fileID: 1663312593983409213}
   m_Layer: 0
   m_Name: spider
   m_TagString: Untagged
@@ -624,9 +625,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141014}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -6.1102557, y: 4.820635, z: 7.5907845}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: -1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 288976821926699151}
@@ -634,7 +635,7 @@ Transform:
   - {fileID: 471168}
   - {fileID: 416338}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!95 &9556174
 Animator:
   serializedVersion: 5
@@ -673,7 +674,7 @@ MonoBehaviour:
   animator: {fileID: 9556174}
   shootPos: {fileID: 288976821926699151}
   headPos: {fileID: 8346468996307275058}
-  weaponCollider: {fileID: 394801103207318527}
+  weaponCollider: {fileID: 1663312593983409213}
   HP: 10
   targetSpeed: 5
   ViewCone: 130
@@ -727,7 +728,28 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 3.0193167
   m_Center: {x: 0.13158369, y: 0, z: 0}
---- !u!136 &394801103207318527
+--- !u!135 &8546992122506870074
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141014}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 40
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &1663312593983409213
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -746,10 +768,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.09032619
-  m_Height: 1
+  m_Radius: 0
+  m_Height: 0
   m_Direction: 1
-  m_Center: {x: -0.11758983, y: 0, z: 0.29208398}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &141678
 GameObject:
   m_ObjectHideFlags: 0
