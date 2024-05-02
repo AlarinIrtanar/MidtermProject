@@ -94,7 +94,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
                 if (!isShooting)
                 {
-                    if (!isMelee || agent.remainingDistance < 1.0f)
+                    if (!isMelee || (transform.position - GameManager.instance.player.transform.position).magnitude <= 2.0f)
                     {
                         StartCoroutine(Attack());
                     }
